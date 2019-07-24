@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const cors = require("cors");
 const knex = require("knex");
+const PORT = process.env.PORT;
 
 const db = knex({
   client: "pg",
@@ -108,11 +109,11 @@ app.put("/image", (req, res) => {
     .increment("entries", 1)
     .return("entries")
     .then(entries => {
-      res.json(entries[0]);
+      res.json(entries);
     })
     .catch(err => res.status(400).json("unable to grab entries"));
 });
 
-app.listen(3000, () => {
-  console.log(`app is running on port 3000`);
+app.listen(PORT, () => {
+  console.log(`app is running on port ${PORT}`);
 });

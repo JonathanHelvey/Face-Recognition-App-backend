@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send(database.users);
+  res.send("it is working");
 });
 
 app.post("/signin", (req, res) => {
@@ -115,6 +115,6 @@ app.put("/image", (req, res) => {
 });
 
 //3000
-app.listen(PORT, () => {
+app.listen(PORT || 3000, () => {
   console.log(`app is running on port ${PORT}`);
 });

@@ -114,6 +114,7 @@ app.put("/image", (req, res) => {
     .catch(err => res.status(400).json("unable to grab entries"));
 });
 
+//3000
 app.listen(PORT, () => {
   console.log(`app is running on port ${PORT}`);
 });

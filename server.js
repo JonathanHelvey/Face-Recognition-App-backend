@@ -106,7 +106,7 @@ app.put("/image", (req, res) => {
     .increment("entries", 1)
     .return("entries")
     .then(entries => {
-      res.json(entries);
+      res.json(entries[0]);
     })
     .catch(err => res.status(400).json("unable to grab entries"));
 });
